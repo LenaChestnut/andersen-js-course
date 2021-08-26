@@ -81,10 +81,10 @@ console.log('=============');
 console.log('task10 old', task10Old()); // {name: 'Max', age: 12, color: red}
 console.log('task10 new', task10New()); // {name: 'Max', age: 12, color: red}
 
-// console.log('=============');
+console.log('=============');
 
-// console.log('task11 old', task11Old({a: null}, 'a')); // false
-// console.log('task11 new', task11New({a: null}, 'a')); // false
+// console.log('task11 old', task11Old({ a: null }, 'a')); // false
+// console.log('task11 new', task11New({ a: null }, 'a')); // false
 
 // console.log('=============');
 
