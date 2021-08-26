@@ -17,6 +17,7 @@
  * Для задач на array-practice импортируйте написанные функции сюда и проверяйте их работу тут.
  */
 
+import any from './array-practice/task1';
 import { task1Old, task1New } from './es-features/task1';
 import { task2Old, task2New } from './es-features/task2';
 import { task3Old, task3New } from './es-features/task3';
@@ -81,7 +82,7 @@ console.log('=============');
 console.log('task10 old', task10Old()); // {name: 'Max', age: 12, color: red}
 console.log('task10 new', task10New()); // {name: 'Max', age: 12, color: red}
 
-console.log('=============');
+// console.log('=============');
 
 // console.log('task11 old', task11Old({ a: null }, 'a')); // false
 // console.log('task11 new', task11New({ a: null }, 'a')); // false
@@ -107,3 +108,9 @@ console.log('=============');
 // console.log('task15 new', task15New([['a', 1], ['b', 2]])); // {a: 1, b: 2}
 
 // console.log('=============');
+
+console.log('======ARRAY PRACTICE=======');
+
+console.log('=======TASK 1======');
+
+console.log(any([0, 1, 2, 0], x => x >= 2)); // true
