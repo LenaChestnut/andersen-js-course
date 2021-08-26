@@ -21,6 +21,7 @@ import any from './array-practice/task1';
 import arrayDiff from './array-practice/task2';
 import forEachRight from './array-practice/task3';
 import union from './array-practice/task4';
+import createGenerator from './array-practice/task5';
 
 import { task1Old, task1New } from './es-features/task1';
 import { task2Old, task2New } from './es-features/task2';
@@ -130,3 +131,13 @@ forEachRight([1, 2, 3, 4], val => console.log(val));
 console.log('=======TASK 4======');
 
 console.log(union([5, 1, 2, 3, 3], [4, 3, 2])); // [5, 1, 2, 3, 4]
+
+console.log('=======TASK 5======');
+
+const generator = createGenerator([1, '6', 3, 2]);
+console.log(generator.next()); // 1
+console.log(generator.next()); // '6'
+console.log(generator.next()); // 3
+console.log(generator.next()); // 2
+console.log(generator.next()); // 'Complete!'
+console.log(generator.next()); // 'Complete!'

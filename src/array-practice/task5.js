@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /**
  * Реализовать функцию createGenerator в этом файле, и экспортировать ее.
  *
@@ -15,3 +16,21 @@
  * generator.next(); -> 'Complete!'
  * generator.next(); -> 'Complete!'
  */
+
+export default function createGenerator(arr) {
+  let current = null;
+
+  function next() {
+    if (current === null) {
+      current = 0;
+    } else {
+      current++;
+    }
+    // return arr[current] ?? 'Complete!';
+    return current >= arr.length ? 'Complete!' : arr[current];
+  }
+
+  return {
+    next,
+  };
+}
