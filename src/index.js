@@ -26,6 +26,7 @@ import transformArrayToNumber from './array-practice/task6';
 import take from './array-practice/task7';
 import without from './array-practice/task8';
 import indexOfAll from './array-practice/task9';
+import { membersOnActiveMeetups, meetups } from './array-practice/task10';
 
 import { task1Old, task1New } from './es-features/task1';
 import { task2Old, task2New } from './es-features/task2';
@@ -168,3 +169,7 @@ console.log('=======TASK 9======');
 
 console.log(indexOfAll([1, 2, 3, 1, 2, 3], 1)); // [0, 3]
 console.log(indexOfAll([1, 2, 3], 4)); // []
+
+console.log('=======TASK 10======');
+
+console.log(membersOnActiveMeetups(meetups)); // 1500
