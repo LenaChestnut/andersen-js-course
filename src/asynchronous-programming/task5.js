@@ -13,6 +13,14 @@ const urlsArr = [
   'http://www.json-generator.com/api/json/get/ceQMMKpidK',
 ];
 
+// const placeholderUrls = [
+//   'https://jsonplaceholder.typicode.com/users/1',
+//   'https://jsonplaceholder.typicode.com/users/2',
+//   'https://jsonplaceholder.typicode.com/users/3',
+//   'https://jsonplaceholder.typicode.com/users/4',
+//   'https://jsonplaceholder.typicode.com/users/5',
+// ];
+
 function fetchParallel(urls) {
   const requests = urls.map(url => fetch(url));
 
@@ -23,33 +31,21 @@ function fetchParallel(urls) {
 
 function fetchSequentially(urls) {
   const dataArr = [];
+  // промис отслеживает положение в массиве
+  let promise = Promise.resolve();
 
-  fetch(urls[0])
-    .then(response => response.json())
-    .then(data => {
-      dataArr.push(data);
-      return fetch(urls[1]);
-    })
-    .then(response => response.json())
-    .then(data => {
-      dataArr.push(data);
-      return fetch(urls[2]);
-    })
-    .then(response => response.json())
-    .then(data => {
-      dataArr.push(data);
-      return fetch(urls[3]);
-    })
-    .then(response => response.json())
-    .then(data => {
-      dataArr.push(data);
-      return fetch(urls[4]);
-    })
-    .then(response => response.json())
-    .then(data => {
-      dataArr.push(data);
-      console.log(dataArr);
-    });
+  urls.forEach(url => {
+    promise = promise
+      .then(() => fetch(url))
+      .then(response => response.json())
+      .then(data => dataArr.push(data))
+      .catch(console.log)
+      .finally(() => {
+        if (dataArr.length === urls.length) {
+          console.log(dataArr);
+        }
+      });
+  });
 }
 
 fetchParallel(urlsArr);
